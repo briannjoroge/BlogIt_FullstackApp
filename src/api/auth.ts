@@ -1,4 +1,5 @@
 import axios from "axios";
+import { domain } from "./utils";
 
 export const registerUser = async (userData: {
   firstName: string;
@@ -8,10 +9,7 @@ export const registerUser = async (userData: {
   password: string;
 }) => {
   try {
-    const res = await axios.post(
-      "http://localhost:3000/api/auth/register",
-      userData
-    );
+    const res = await axios.post(`${domain}/api/auth/register`, userData);
     return res.data;
   } catch {
     throw new Error("Registration failed");
@@ -23,10 +21,7 @@ export const loginUser = async (credentials: {
   password: string;
 }) => {
   try {
-    const res = await axios.post(
-      "http://localhost:3000/api/auth/login",
-      credentials
-    );
+    const res = await axios.post(`${domain}api/auth/login`, credentials);
     return res.data;
   } catch {
     throw new Error("Login failed");
