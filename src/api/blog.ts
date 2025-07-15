@@ -10,13 +10,13 @@ export const createBlog = async (blogData: {
   if (!token) throw new Error("No authentication token found");
 
   const response = await axios.post(
-    "http://localhost:3000/api/blogs",
+    "https://blogit-backend-zwpv.onrender.com/api/blogs",
     blogData,
     {
       headers: {
         Authorization: `Bearer ${token}`,
       },
-    },
+    }
   );
 
   return response.data;
