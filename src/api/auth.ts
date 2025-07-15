@@ -9,7 +9,7 @@ export const registerUser = async (userData: {
 }) => {
   try {
     const res = await axios.post(
-      "https://blogit-backend-zwpv.onrender.com/api/auth/register",
+      "http://localhost:3000/api/auth/register",
       userData
     );
     return res.data;
@@ -24,7 +24,7 @@ export const loginUser = async (credentials: {
 }) => {
   try {
     const res = await axios.post(
-      "https://blogit-backend-zwpv.onrender.com/api/auth/login",
+      "http://localhost:3000/api/auth/login",
       credentials
     );
     return res.data;
